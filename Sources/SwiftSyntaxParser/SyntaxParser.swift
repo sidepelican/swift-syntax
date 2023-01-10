@@ -84,6 +84,7 @@ public enum SyntaxParser {
     )
   }
 
+#if !os(WASI)
   /// Parses the file `URL` into a full-fidelity Syntax tree.
   ///
   /// - Parameters:
@@ -118,6 +119,7 @@ public enum SyntaxParser {
       diagnosticHandler: diagnosticHandler
     )
   }
+#endif
 
   private static func parseImpl(
     source: String,
